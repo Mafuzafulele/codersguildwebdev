@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leeds Affordable Housing Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background: url('housing-bck.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+
+        /* Custom Back to Top Button */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        #back-to-top:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Housing Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#properties">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#list-property">List Property</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div>
+            <h1>Find Affordable Housing in Leeds</h1>
+            <p class="lead">Browse modest homes and state-funded accommodations</p>
+        </div>
+    </section>
+
+    <!-- Property Listings Carousel -->
+    <section id="properties" class="container my-5">
+        <h2 class="text-center mb-4">Available Affordable Leeds Homes</h2>
+        <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="house3.jpg" class="d-block w-100" alt="Small Family Home">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75">
+                        <h5>Small Family Home</h5>
+                        <p>Cozy home suitable for small families.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="house2.jpg" class="d-block w-100" alt="State-Funded Apartment">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75">
+                        <h5>State-Funded Apartment</h5>
+                        <p>Affordable apartment with essential amenities.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="house1.jpg" class="d-block w-100" alt="Community Housing">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75">
+                        <h5>Community Housing</h5>
+                        <p>Safe housing for individuals on state funding.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Property Details Accordion -->
+    <section class="container my-5">
+        <div class="accordion" id="propertyAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Small Family Home
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#propertyAccordion">
+                    <div class="accordion-body">
+                        Details about the small family home go here...
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        State-Funded Apartment
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#propertyAccordion">
+                    <div class="accordion-body">
+                        Details about the state-funded apartment go here...
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        Community Housing
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#propertyAccordion">
+                    <div class="accordion-body">
+                        Details about community housing go here...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Submission Form -->
+    <section id="list-property" class="container my-5">
+        <h2 class="text-center mb-4">List Your Property</h2>
+        <form action="https://formspree.io/f/mpwqjdew" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Property Title</label>
+                <input type="text" name="title" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="description" class="form-control" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input type="number" name="price" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Submit Property</button>
+        </form>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="container my-5">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <form action="https://formspree.io/f/xgvolkje" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea name="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; <span id="year"></span> Leeds Housing Platform. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">↑</button>
+
+    <script>
+        // Display current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        backToTopButton.addEventListener("click", () => {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
